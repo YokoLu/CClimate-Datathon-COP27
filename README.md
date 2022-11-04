@@ -20,11 +20,13 @@ This is a mockup that we created for the website to showcase our work - https://
 Under Construction website resources have been captured here: https://drive.google.com/drive/folders/1gQxjdi0H_c5q5DzJjv9xj-kT5tBayHIA
 
 ### Installation
-This repo contains the code for the 3D visualizations as well. The visualizations can be seen at - https://iofall.github.io/Climate-Datathon-COP27/ and are based on the methodology described in our slide
+This repo contains the code for the 3D visualizations as well. The visualizations can be seen at - https://iofall.github.io/Climate-Datathon-COP27/ and are based on the methodology described in our slide.
+
+To run this locally, clone the repo - `git clone https://github.com/iofall/Climate-Datathon-COP27.git` and just open the HTML file using a server (to avoid CORS issue from reading local files).
 
 ### Additional Repos
 We also had some sensitive datasets that we covered in this repo - https://github.com/DavidSmithPeregrine/Climate-DataThon-2022 which has already been shared with the organizers.
 
 ### Libraries Used
-- [Globe.gl](https://globe.gl/) - Used to create the rendered globe. Country Geojsons were also made available through this JS library.
+- [Globe.gl](https://globe.gl/) - Used to create the rendered globe. Country GeoJSONs were also made available through this JS library.
 - [d3.js](https://d3js.org/) - Used to read and parse our dataset in the form of CSVs.
