@@ -25,4 +25,6 @@ This repo contains the code for the 3D visualizations as well. The visualization
 ### Additional Repos
 We also had some sensitive datasets that we covered in this repo - https://github.com/DavidSmithPeregrine/Climate-DataThon-2022 which has already been shared with the organizers.
 
-
+### Libraries Used
+- [Globe.gl](https://globe.gl/) - Used to create the rendered globe. Country Geojsons were also made available through this JS library.
+- [d3.js](https://d3js.org/) - Used to read and parse our dataset in the form of CSVs.
