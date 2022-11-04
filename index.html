@@ -180,15 +180,16 @@
                 header.textContent = col;
             }
 
-            (function moveSpheres() {
+            function changeIndicator() {
                 world
                 .polygonCapColor(({ properties: d }) => colorScale(createVal(d)))
                 .polygonLabel(({ properties: d }) => `
                     <b>${d.ADMIN} (${d.ISO_A2}):</b> <br />
                     ${col}: <i>${df.iloc({ rows: df["Country"].eq(d.ADMIN) }).loc({ columns: [col] }).values}</i>
                     `);
-                requestAnimationFrame(moveSpheres);
-            })();
+            }
+
+            requestAnimationFrame(changeIndicator);
         });
     </script>
 </body>
