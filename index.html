@@ -31,10 +31,10 @@
             <option value="TPAS">Total Policies & Action Score</option>
             <option value="AD">Aggregated Data & Action Score</option>
         </select>
-    
 
-    <div id="globeViz" style="align-items: center;"></div>
-</div>
+
+        <div id="globeViz" style="align-items: center;"></div>
+    </div>
     <script>
         var red = "#92140C";
         var green = "#20BF55";
@@ -151,7 +151,7 @@
         // Source: https://github.com/vasturiano/globe.gl
         fetch('./datasets/countries.geojson').then(res => res.json()).then(countries => {
 
-            world = Globe()
+            world = Globe({ rendererConfig: { antialias: false, precision: 'lowp' } })
                 .globeImageUrl('//unpkg.com/three-globe/example/img/earth-day.jpg')
                 .backgroundColor('#d9fcfc')
                 .lineHoverPrecision(0)
