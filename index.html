@@ -19,7 +19,7 @@
 
 <body style="background-color: #d9fcfc; text-align: center;">
 
-    <div id="con" class="container">
+    <div id="size-container" class="container">
         <h1 id="header"
             style="background-color: white; text-align: center; padding-bottom: 20px; text-transform: capitalize; font-family: 'Montserrat';">
             Total Commitment Score
@@ -31,10 +31,10 @@
             <option value="TPAS">Total Policies & Action Score</option>
             <option value="AD">Aggregated Data & Action Score</option>
         </select>
-    </div>
+    
 
     <div id="globeViz" style="align-items: center;"></div>
-
+</div>
     <script>
         var red = "#92140C";
         var green = "#20BF55";
@@ -44,13 +44,13 @@
             worldWidth = window.innerWidth
             worldHeight = window.innerHeight
 
-            var body = document.querySelector('body');
+            var containerSize = document.querySelector('#size-container');
             if (worldWidth >= worldHeight) {
-                world.width([body.offsetWidth])
+                world.width([containerSize.offsetWidth])
                 world.height([worldHeight * 0.9])
             }
             else {
-                world.width([body.offsetWidth])
+                world.width([containerSize.offsetWidth])
                 world.height([worldWidth * 0.9])
             }
         }
