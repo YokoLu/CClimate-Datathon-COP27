@@ -45,12 +45,14 @@
             worldHeight = window.innerHeight
 
             var containerSize = document.querySelector('#size-container');
+            padding = parseFloat(window.getComputedStyle(containerSize, null).getPropertyValue('padding-right'))
+
             if (worldWidth >= worldHeight) {
-                world.width([containerSize.offsetWidth])
+                world.width([containerSize.offsetWidth - padding * 2])
                 world.height([worldHeight * 0.9])
             }
             else {
-                world.width([containerSize.offsetWidth])
+                world.width([containerSize.offsetWidth - padding * 2])
                 world.height([worldWidth * 0.9])
             }
         }
