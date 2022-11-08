@@ -30,3 +30,4 @@ We also had some sensitive datasets that we covered in this repo - https://githu
 ### Libraries Used
 - [Globe.gl](https://globe.gl/) - Used to create the rendered globe. Country GeoJSONs were also made available through this JS library.
 - [d3.js](https://d3js.org/) - Used to read and parse our dataset in the form of CSVs.
+- [color-legend-element](https://www.npmjs.com/package/color-legend-element) - Used to make the dynamic legend.
