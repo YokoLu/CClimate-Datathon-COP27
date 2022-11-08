@@ -1,3 +1,21 @@
 canvas{
     padding-bottom: 20px;
 }
+
+.scene-container{
+    padding-top: 20px;
+}
+
+.scene-tooltip{
+    color: black;
+    background-color: white;
+    border-radius: 5%;
+}
+
+.polygon-label{
+    padding: 6px;
+}
+
+#color-legend{
+    --cle-font-weight-title: bold;
+}
