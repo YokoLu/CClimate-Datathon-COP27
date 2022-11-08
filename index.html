@@ -23,7 +23,7 @@
 
     <div id="size-container" class="container">
         <h1 id="header"
-            style="background-color: white; text-align: center; padding-bottom: 20px; text-transform: capitalize; font-family: 'Montserrat';">
+            style="background-color: white; text-align: center; padding-bottom: 20px; font-family: 'Montserrat';">
             Total Commitment Score
         </h1>
 
@@ -31,7 +31,7 @@
             <option value="TCS" selected>Total Commitment Score</option>
             <option value="TVS">Total Vulnerability Score</option>
             <option value="TPAS">Total Policies & Action Score</option>
-            <option value="AD">Aggregated Data & Action Score</option>
+            <option value="AD">Ocean Resilience Score</option>
         </select>
 
         <div style="position: relative; align-items: center; background-color: white;">
@@ -49,6 +49,7 @@
     
     <script>
         // Color Legend Initial Setup
+        var title = "Total Commitment Score" 
         var color_legend = document.getElementById('color-legend');
         var color_domain = [-2,4];
         var color_interpolator = d3.interpolateGreens;
@@ -144,34 +145,34 @@
             if (indicator_selector === 'TCS') {
                 console.log("TCS");
                 col = "Total commitment score";
-
+                title = "Total Commitment Score"    
                 color_domain = [-2, 4];
                 color_interpolator = d3.interpolateGreens;
             }
             else if (indicator_selector === 'TVS') {
                 console.log("TVS");
                 col = "Total vulnerability score";
-
+                title = "Total Vulnerability Score"
                 color_domain = [0, -2.5];
                 color_interpolator = d3.interpolateOranges;
             }
             else if (indicator_selector === 'TPAS') {
                 console.log("TPAS");
                 col = "Total policies and action score";
-
+                title = "Total Policies and Action Score"
                 color_domain = [-2.5, 2.5];
                 color_interpolator = d3.interpolateBlues;
             }
             else if (indicator_selector === 'AD') {
                 console.log("AD");
                 col = "Aggregated data";
-
+                title = "Ocean Resilience Score"
                 color_domain = [-2, 1]
                 color_interpolator = d3.interpolatePurples
             }
             
-            header.textContent = col;
-            color_legend.titleText = col;
+            header.textContent = title;
+            color_legend.titleText = title;
             color_legend.domain = color_domain;
             color_legend.interpolator = color_interpolator;
 
