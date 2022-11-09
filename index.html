@@ -47,20 +47,27 @@
             tickFormat=".0f"
             domain="[-2, 4]" style="z-index: 100; position: absolute; display: block; left: 50%; transform: translate(-50%);">
             </color-legend>
+
+            <div class="form-check rotate-selection">
+                <input type="checkbox" id="auto-rotate" name="auto-rotate">
+                <label for="auto-rotate">Auto-Rotate</label>
+            </div>
             
-          <div id="globeViz" style="align-items: center; z-index: 1;"></div>
+            <div id="globeViz" style="align-items: center; z-index: 1;"></div>
         </div>
     </div>
 
     
     <script>
-        // Color Legend Initial Setup
+        // Initial Setup
         var title = "Total Commitment Score" 
         var color_legend = document.getElementById('color-legend');
         var color_domain = [-2,4];
         var color_interpolator = d3.interpolateGreens;
         color_legend.domain = color_domain;
         color_legend.interpolator = color_interpolator;
+
+        var auto_rotate = false;
 
         function resize() {
             worldWidth = window.innerWidth
@@ -138,6 +145,10 @@
                 )
                 .polygonsTransitionDuration(300)
                 (document.getElementById('globeViz'))
+            
+            // Auto-rotate
+            world.controls().autoRotate = auto_rotate;
+            world.controls().autoRotateSpeed = 5;
 
             resize();
         });
@@ -192,8 +203,21 @@
                     </div>
                     `);
             }
-
+            
             requestAnimationFrame(changeIndicator);
+        });
+
+        var auto_rotate_checkbox = document.getElementById('auto-rotate')
+        
+        auto_rotate_checkbox.addEventListener('change', function (event) {
+            if (auto_rotate_checkbox.checked) {
+                auto_rotate = true;
+                world.controls().autoRotate = auto_rotate;
+            }
+            else {
+                auto_rotate = false;
+                world.controls().autoRotate = auto_rotate;
+            }
         });
     </script>
 </body>

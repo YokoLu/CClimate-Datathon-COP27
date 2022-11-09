@@ -19,3 +19,10 @@ canvas{
 #color-legend{
     --cle-font-weight-title: bold;
 }
+
+.rotate-selection{
+    z-index: 100;
+    position: absolute;
+    display: block;
+    transform: translateY(100%);
+}
